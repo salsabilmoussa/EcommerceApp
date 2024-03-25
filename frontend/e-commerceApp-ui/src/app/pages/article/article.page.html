@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-no-padding">
+      <!-- Bouton de menu -->
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <!-- Icône personnalisée -->
+      <img width="20" height="20" src="https://img.icons8.com/android/24/737373/sofa.png" alt="sofa"/>
+      <!-- Nom de l'application -->
+      <span style="color: #3E976C;  margin-left: 4px;">Chic</span>
+      <span>Chair</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <!-- Barre de recherche -->
+  <div class="custom-searchbar">
+    <input type="text" placeholder="Search" style="background-color: #FFFFFF; height: 45px; width: 186px; border-radius: 20px; padding: 0 10px; border: 1px solid #CCCCCC;">
+    <ion-icon name="search-outline" style="color: #737373; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></ion-icon>
+  </div>
+
+  <!-- Bouton d'ajout d'article -->
+  <ion-button style="position: absolute; margin-top: 30px; left: 286px; top: 33px; width: 58px; height: 50px;" expand="block">
+    <!-- Icône personnalisée -->
+    <img width="40" height="35" src="https://img.icons8.com/material/24/EBEBEB/add.png" alt="add"/>
+  </ion-button>
+  
+</ion-content>

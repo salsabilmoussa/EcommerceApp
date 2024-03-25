@@ -1,0 +1,146 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-divider {
+    width: 275px;
+    height: 50px;
+    background-color: #F9F7F7; /* Couleur du rectangle */
+    margin-bottom: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center; /* Aligner les éléments enfants verticalement */
+
+  }
+  
+  
+  .profile-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .rectangle {
+    position: absolute;
+    margin-top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 333px;
+    height: 449px;
+    background-color: white;
+    border-radius: 15px;
+    z-index: -1; /* Placer le rectangle sous les données du profil */
+  }
+  
+  .profile-data {
+    margin-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 20px; /* Modifier la position gauche selon vos besoins */
+    transform: translateY(-50%);
+    padding: 20px;
+    color: black;
+  }
+
+  ion-content {
+    --background: #E2F0E9; /* Nouvelle couleur de fond */
+  }
+  ion-toolbar {
+    --background: #E2F0E9; /* Nouvelle couleur de fond de la barre de navigation */
+  }
+
+  ion-card {
+      --box-shadow: none;
+      --border: none;
+  }
+
+.profile-data p {
+  margin-top: 5px;
+}
+
+.dataDesign{
+  color: gray; 
+}
+.separator {
+    width: 236px;
+    height: 5px; /* Largeur de la ligne de séparation */
+    border: none;
+    height: 1px; /* Épaisseur de la ligne de séparation */
+    background-color: #3E976C; /* Couleur de la ligne de séparation */
+    margin: 10px auto; /* Espacement autour de la ligne de séparation */
+  }
+
+  .profile-details h6 {
+    margin-top: 30px;
+    margin-bottom: -10px;
+    font-family : Inder;
+  }
+
+  .custom-button {
+    flex: 1; /* Permettre aux boutons d'occuper une part égale de l'espace disponible */
+    background-color: #F9F7F7;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+  }
+  
+  .custom-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .circle-container-nav {
+    position: absolute;
+    bottom: 5px; 
+    right: 0px;
+    left: 20px;
+    top: -7px; 
+    width: 15px; 
+    height: 15px;
+    background-color: #3E976C;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-container {
+    position: absolute;
+    bottom: 70px; /* Ajustez la position verticale selon vos besoins */
+    right: 50px; /* Ajustez la position horizontale selon vos besoins */
+    width: 50px; /* Ajustez la taille du cercle selon vos besoins */
+    height: 50px; /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #3E976C; /* Couleur de fond du cercle */
+    border-radius: 50%; /* Pour créer un cercle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toolbar-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: -300px;
+  }
+
+
+
+
+  /*cars style*/
+  .card-style{
+    width: 128px;
+    height: 200px;
+    background-color:#E2F0E9 ;
+}

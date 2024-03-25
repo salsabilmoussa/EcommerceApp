@@ -1,0 +1,88 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title style="margin-left: -20px;">
+    <span style="color: #3E976C;">Chic</span>
+    <span>Chair</span>
+  </ion-title>
+  <ion-buttons slot="primary" style="margin-right: 50px;">
+    <div class="circle-container-nav">
+      <p style="color: white;">0</p>
+    </div>
+    <ion-img src="../../../assets/icon/icons8-shopping-cart-24.png" class="toolbar-icon"></ion-img>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <div class="profile-image">
+      <img src="../../../assets/images/6aee3c0aad2c07b84a2031ae99d7021a.jpg" alt="Profile Picture">
+    </div>
+    <div *ngIf="isSelected.profile">
+    <div class="profile-divider">
+      <ion-tab-button tab="profile" class="custom-button" style="margin-right: -20px;" (click)="activeTab('profile','bag')">
+        <ion-img *ngIf="!isSelected.profile" src="../../../assets/icon/user (2).png" class="custom-icon"></ion-img>
+        <ion-img *ngIf="isSelected.profile" src="../../../assets/icon/account.png" class="custom-icon"></ion-img>
+      </ion-tab-button>
+      <ion-tab-button tab="bag" class="custom-button" style="margin-left: -20px;" (click)="activeTab('bag','profile')">
+        <ion-img *ngIf="!isSelected.bag" src="../../../assets/icon/shopping-bag (1).png" class="custom-icon"></ion-img>
+        <ion-img *ngIf="isSelected.bag" src="../../../assets/icon/shopping-bag (2).png" class="custom-icon"></ion-img>
+      </ion-tab-button>
+    </div> <!-- Ajout du rectangle -->
+    <div class="profile-details">
+      <div class="profile-data">
+        <h6 class="dataDesign">Full Name</h6>
+        <h2>Khadraoui Feryel</h2>
+        <hr class="separator">
+        <h6 class="dataDesign">E-mail</h6>
+        <h2>khadraouiferyel09</h2>
+        <hr class="separator">
+        <h6 class="dataDesign">Birthday </h6>
+        <h2>20/11/2001</h2>
+        <hr class="separator">
+      </div>
+      <div class="circle-container">
+        <ion-img src="../../../assets/icon/edit.png" class="custom-icon"></ion-img>
+      </div>
+    </div>
+    <div class="rectangle-container">
+      <div class="rectangle"></div>
+    </div>
+    </div>
+  </div>
+
+
+
+  
+<div *ngIf="isSelected.bag">
+  <div class="profile-divider" style="margin-left: 20px;">
+    <ion-tab-button tab="profile" class="custom-button" style="margin-right: -20px;" (click)="activeTab('profile','bag')">
+      <ion-img *ngIf="!isSelected.profile" src="../../../assets/icon/user (2).png" class="custom-icon"></ion-img>
+      <ion-img *ngIf="isSelected.profile" src="../../../assets/icon/account.png" class="custom-icon"></ion-img>
+    </ion-tab-button>
+    <ion-tab-button tab="bag" class="custom-button" style="margin-left: -20px;" (click)="activeTab('bag','profile')">
+      <ion-img *ngIf="!isSelected.bag" src="../../../assets/icon/shopping-bag (1).png" class="custom-icon"></ion-img>
+      <ion-img *ngIf="isSelected.bag" src="../../../assets/icon/shopping-bag (2).png" class="custom-icon"></ion-img>
+    </ion-tab-button>
+  </div> <!-- Ajout du rectangle -->
+
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <div *ngFor="let product of products" class="card-style">
+
+
+    <ion-buttons slot="primary" style="margin-left: 110px; margin-bottom: -15px;">
+      <ion-img src="../../../assets/images/icons8-cross-50.png" class="toolbar-icon"></ion-img>
+    </ion-buttons>
+
+
+    <img alt="Silhouette of mountains" [src]="product.img" />
+    <ion-card-header>
+      <p style="font-size: 8px; margin-top: -15px; margin-left: -15px;">{{ product.title }}</p>
+      <p style="font-size: 12px; margin-top: -5px; margin-left: -15px; color: #3E976C;">{{ product.price }}</p>
+    </ion-card-header>
+  </div>
+  </div>
+</div>
+</ion-content>

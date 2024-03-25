@@ -1,0 +1,18 @@
+<ion-tabs>
+  <ion-tab-bar class="custom-tab-bar">
+    <ion-tab-button tab="profile1" class="custom-button" (click)="activeTab('profile1','article','settings')">
+      <ion-img *ngIf="!isSelected.profile1" src="../../../assets/icon/user.png" class="custom-icon"></ion-img>
+      <ion-img *ngIf="isSelected.profile1" src="../../../assets/icon/account.png" class="custom-icon-active"></ion-img>
+    </ion-tab-button>
+    <ion-tab-button tab="article" class="custom-button" (click)="activeTab('article','profile1','settings')">
+      <ion-img *ngIf="!isSelected.article" src="../../../assets/icon/home.png" class="custom-icon"></ion-img>
+      <ion-img *ngIf="isSelected.article" src="../../../assets/icon/home (2).png" class="custom-icon-active"></ion-img>
+    </ion-tab-button>
+    <ion-tab-button tab="settings" class="custom-button" (click)="activeTab('settings','profile1','article')">
+      <ion-img *ngIf="!isSelected.settings" src="../../../assets/icon/setting.png" class="custom-icon"></ion-img>
+      <ion-img *ngIf="isSelected.settings" src="../../../assets/icon/settings1.png" class="custom-icon-active"></ion-img>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+
