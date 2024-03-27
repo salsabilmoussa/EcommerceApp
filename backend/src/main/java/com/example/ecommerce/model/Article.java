@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document(value = "Artice")
+@Document(value = "Article")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -17,5 +17,6 @@ public class Article {
     private String title;
     private Float price;
     private Integer quantity;
+    private String imageUrl;
 
 }
