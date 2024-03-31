@@ -1,0 +1,113 @@
+<div class="ion-page">
+
+<ion-header [translucent]="true">
+  <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-no-padding">
+      <!-- Bouton de menu -->
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <!-- Icône personnalisée -->
+      <img width="20" height="20" src="https://img.icons8.com/android/24/737373/sofa.png" alt="sofa"/>
+      <!-- Nom de l'application -->
+      <span style="color: #3E976C;  margin-left: 4px;">Chic</span>
+      <span>Chair</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <!-- Barre de recherche -->
+  <div class="custom-searchbar">
+    <input type="text" placeholder="Search" style="background-color: #FFFFFF; height: 45px; width: 186px; border-radius: 20px; padding: 0 10px; border: 1px solid #CCCCCC;">
+    <ion-icon name="search-outline" style="color: #737373; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></ion-icon>
+  </div>
+  <button ion-button id="open-modal" class="bouton-blanc">Add article</button>
+  <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>New article</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss(); articleForm.reset()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+
+
+  <form (submit)="ajouterProduit();  articleForm.reset()" #articleForm="ngForm">
+    <ion-item class="form-item">
+      <ion-label position="stacked" class="form-label">Title</ion-label>
+      <ion-input type="text" [(ngModel)]="nouveauProduit.title" name="title" class="form-input"></ion-input>
+    </ion-item>
+    <ion-item class="form-item">
+      <ion-label position="stacked" class="form-label">Description</ion-label>
+      <ion-input type="text" [(ngModel)]="nouveauProduit.description" name="description" class="form-input"></ion-input>
+    </ion-item>
+    <ion-item class="form-item">
+      <ion-label position="stacked" class="form-label">Price</ion-label>
+      <ion-input type="text" [(ngModel)]="nouveauProduit.price" name="price" class="form-input" ></ion-input>
+    </ion-item>
+    <ion-item class="form-item">
+      <ion-label position="stacked" class="form-label">Quantity</ion-label>
+      <ion-input type="text" [(ngModel)]="nouveauProduit.quantity" name="quantity" class="form-input"></ion-input>
+    </ion-item>
+    <ion-item class="form-item">
+      <ion-label position="stacked" class="form-label">Select Image</ion-label>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-file">
+    </ion-item>
+    <ion-button type="submit" expand="block" class="form-submit">Create Article</ion-button>
+  </form>
+
+
+  </ion-content>
+      </ng-template>
+  </ion-modal>
+
+<div class="element">
+  <div class="titre">List of articles</div>
+  <div class="article-list">
+    <!-- Votre contenu existant -->
+
+<div *ngFor="let article of pagedArticles" class="article-row">
+  <!-- Afficher les détails de l'article -->
+  <!-- Image -->
+  <div class="article-image">
+    <img [src]="article.imageUrl" alt="Article Image">
+  </div>
+  <!-- Détails de l'article -->
+  <div class="article-details">
+    <!-- Titre -->
+    <div class="article-title">
+      {{ article.title }}
+    </div>
+    <!-- Description -->
+    <div class="article-description">
+      {{ article.description }}
+    </div>
+    <!-- Bouton de modification -->
+    <div class="article-edit-button">
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+  </div>
+</div>
+
+<!-- Vos boutons de pagination -->
+
+  </div>
+  
+  <!-- Boutons de pagination -->
+  <div class="pagination-buttons" *ngIf="produits.length > 0">
+    <button *ngIf="showPreviousButton()" (click)="previousPage()">Previous</button>
+    <button *ngFor="let page of totalPages" (click)="goToPage(page)">{{ page }}</button>
+    <button *ngIf="showNextButton()" (click)="nextPage()">Next</button>
+  </div>
+  
+</div>
+
+</ion-content>
+</div>
