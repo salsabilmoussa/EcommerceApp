@@ -14,5 +14,8 @@ export class ProduitService {
   createProduit(produit : any){
     return this.http.post(`${this.url}api/produits/`, produit);
   }
+  getProduitById(id : string){
+    return this.http.get(`${this.url}api/produits/${id}`);
+  }
   
 }

@@ -18,5 +18,6 @@ public class Produit {
     private String price;
     private String quantity;
     private String imageUrl;
+    private String ownerId;
 
 }

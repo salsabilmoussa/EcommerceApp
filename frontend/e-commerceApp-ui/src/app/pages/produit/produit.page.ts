@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ProduitService } from 'src/app/service/produit.service';
+import { AuthService } from '../../service/auth.service';
+
 
 @Component({
   selector: 'app-produit',
@@ -8,28 +10,44 @@ import { ProduitService } from 'src/app/service/produit.service';
 })
 export class ProduitPage implements OnInit {
 
+
   produits: any;
   nouveauProduit: any = {
     title: '',
     description: '',
     imageUrl: '',
     price: '',
-    quantity: ''
+    quantity: '',
+    ownerId : ''
   };
+  user: any;
   pagedArticles: any;
   currentPage: number = 1;
   articlesPerPage: number = 4;
   presentingElement: HTMLElement | null = null;
+  userId: string | null = null;
 
   constructor(
     private produitService: ProduitService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private authService: AuthService
   ) {
     this.presentingElement = this.elementRef.nativeElement as HTMLElement;
    }
 
   ngOnInit() {
     this.chargerProduits();
+    this.userId = localStorage.getItem('userId');
+    if(this.userId != null){
+      this.authService.getUser(this.userId).subscribe(
+        res =>{
+          this.user = res;
+          console.log(res)
+        }, err =>{
+          console.log(err);
+        }
+      );
+    }
   }
 
   updatePage(): void {
@@ -75,8 +93,8 @@ export class ProduitPage implements OnInit {
     this.produitService.getAllProduits().subscribe(
       res => {
         this.produits = res;
-        console.log(res);
-        this.updatePage(); // Appeler updatePage() après avoir reçu les produits
+        this.produits.reverse();
+        this.updatePage(); 
       },
       err => {
         console.log(err);
@@ -85,6 +103,7 @@ export class ProduitPage implements OnInit {
   }
 
   ajouterProduit() {
+    this.nouveauProduit.ownerId = this.userId;
     this.produitService.createProduit(this.nouveauProduit).subscribe(
       res => {
         console.log(res);

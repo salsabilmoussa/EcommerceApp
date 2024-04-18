@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tab/tab.module').then( m => m.TabPageModule)
   },
   {
-    path: 'home',
+    path: 'tab/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -35,6 +35,20 @@ const routes: Routes = [
     path: 'produit',
     loadChildren: () => import('./pages/produit/produit.module').then( m => m.ProduitPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'product-details/:id',
+    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  },
+  {
+    path: 'basket',
+    loadChildren: () => import('./pages/basket/basket.module').then( m => m.BasketPageModule)
+  },
+
+
 
 ];
 

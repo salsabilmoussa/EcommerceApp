@@ -39,7 +39,7 @@
 
 
 
-  <form (submit)="ajouterProduit();  articleForm.reset()" #articleForm="ngForm">
+  <form (submit)="ajouterProduit();  articleForm.reset() ; modal.dismiss();" #articleForm="ngForm">
     <ion-item class="form-item">
       <ion-label position="stacked" class="form-label">Title</ion-label>
       <ion-input type="text" [(ngModel)]="nouveauProduit.title" name="title" class="form-input"></ion-input>

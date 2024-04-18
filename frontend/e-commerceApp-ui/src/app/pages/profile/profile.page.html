@@ -17,7 +17,7 @@
 <ion-content class="ion-padding">
   <div class="profile-container">
     <div class="profile-image">
-      <img src="../../../assets/images/6aee3c0aad2c07b84a2031ae99d7021a.jpg" alt="Profile Picture">
+      <img [src]="user.pic" alt="Profile Picture">
     </div>
     <div *ngIf="isSelected.profile">
     <div class="profile-divider">
@@ -33,10 +33,10 @@
     <div class="profile-details">
       <div class="profile-data">
         <h6 class="dataDesign">Full Name</h6>
-        <h2>Khadraoui Feryel</h2>
+        <h2>{{user.name}}</h2>
         <hr class="separator">
         <h6 class="dataDesign">E-mail</h6>
-        <h2>khadraouiferyel09</h2>
+        <h2>{{user.email}}</h2>
         <hr class="separator">
         <h6 class="dataDesign">Birthday </h6>
         <h2>20/11/2001</h2>
@@ -69,18 +69,18 @@
 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <p *ngIf="!testList" style="font-size: 15px; color: #555; text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">Your shopping list is currently empty. Start adding products to begin your shopping experience! </p>
   <div *ngFor="let product of products" class="card-style">
 
-
     <ion-buttons slot="primary" style="margin-left: 110px; margin-bottom: -15px;">
-      <ion-img src="../../../assets/images/icons8-cross-50.png" class="toolbar-icon"></ion-img>
+      <ion-img (click)="deleteProd(product)" src="../../../assets/images/icons8-cross-50.png" class="toolbar-icon"></ion-img>
     </ion-buttons>
 
 
-    <img alt="Silhouette of mountains" [src]="product.img" />
+    <img alt="Silhouette of mountains" [src]="product.imageUrl" />
     <ion-card-header>
       <p style="font-size: 8px; margin-top: -15px; margin-left: -15px;">{{ product.title }}</p>
-      <p style="font-size: 12px; margin-top: -5px; margin-left: -15px; color: #3E976C;">{{ product.price }}</p>
+      <p style="font-size: 12px; margin-top: -5px; margin-left: -15px; color: #3E976C;">$ {{ product.price }}.00</p>
     </ion-card-header>
   </div>
   </div>

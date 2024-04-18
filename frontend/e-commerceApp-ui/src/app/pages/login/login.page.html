@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password">
+    </div>
+    <button type="submit">Se connecter</button><p></p>
+    <button (onclick)="logout">logout</button>
+  </form>
+  
+</ion-content>
