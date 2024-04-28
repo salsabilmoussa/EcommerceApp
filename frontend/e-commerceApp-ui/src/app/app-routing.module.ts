@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tab/tab.module').then( m => m.TabPageModule)
   },
   {
-    path: 'home',
+    path: 'tab/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'article',
-    loadChildren: () => import('./pages/article/article.module').then( m => m.ArticlePageModule)
-  },
-  {
     path: 'tab1',
     loadChildren: () => import('./pages/tab1/tab1.module').then( m => m.Tab1PageModule)
   },
@@ -35,6 +31,25 @@ const routes: Routes = [
     path: 'profile1',
     loadChildren: () => import('./pages/profile1/profile1.module').then( m => m.Profile1PageModule)
   },
+  {
+    path: 'produit',
+    loadChildren: () => import('./pages/produit/produit.module').then( m => m.ProduitPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'product-details/:id',
+    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  },
+  {
+    path: 'basket',
+    loadChildren: () => import('./pages/basket/basket.module').then( m => m.BasketPageModule)
+  },
+
+
+
 ];
 
 @NgModule({

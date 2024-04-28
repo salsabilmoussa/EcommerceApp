@@ -1,10 +1,10 @@
 <ion-tabs>
   <ion-tab-bar class="custom-tab-bar">
-    <ion-tab-button tab="profile" class="custom-button" (click)="activeTab('profile','home','settings')">
+    <ion-tab-button routerLink="/tab/profile" class="custom-button" (click)="activeTab('profile','home','settings')">
       <ion-img *ngIf="!isSelected.profile" src="../../../assets/icon/user.png" class="custom-icon"></ion-img>
       <ion-img *ngIf="isSelected.profile" src="../../../assets/icon/account.png" class="custom-icon-active"></ion-img>
     </ion-tab-button>
-    <ion-tab-button tab="home" class="custom-button" (click)="activeTab('home','profile','settings')">
+    <ion-tab-button class="custom-button" routerLink="/tab/home" (click)="activeTab('home','profile','settings')">
       <ion-img *ngIf="!isSelected.home" src="../../../assets/icon/home.png" class="custom-icon"></ion-img>
       <ion-img *ngIf="isSelected.home" src="../../../assets/icon/home (2).png" class="custom-icon-active"></ion-img>
     </ion-tab-button>
