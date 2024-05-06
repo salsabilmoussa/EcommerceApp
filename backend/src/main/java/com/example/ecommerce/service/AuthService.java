@@ -137,4 +137,10 @@ public class AuthService {
     public void deleteUser(String userId) {
         ourUserRepo.deleteById(userId);
     }
+
+    public List<OurUsers> getUsersByRoleSeller() {
+        return ourUserRepo.findByRole("seller") ;
+    }
+
+
 }

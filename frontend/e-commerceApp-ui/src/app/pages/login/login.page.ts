@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,25 @@ export class LoginPage implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor( private authService: AuthService ) { }
+  constructor( private authService: AuthService, private router: Router ) { }
   onSubmit() {
     this.authService.signIn({email: this.username, password: this.password})
       .subscribe(response => {
         console.log(response);
         if (response.ourUsers) {
           localStorage.setItem('userId', response.ourUsers.id);
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('refreshToken', response.refreshToken);
+          if (response.ourUsers.role === 'admin') {
+            this.router.navigate(['/admin']);
+          } else {
+            // Gérer le cas où l'utilisateur n'est pas un admin mais a un compte
+            console.log('User is not an admin but has an account.');
+          }
+        } else {
+          // Gérer le cas où l'utilisateur n'a pas encore de compte
+          alert('Your request is under process.');
         }
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('refreshToken', response.refreshToken);
-        console.log(localStorage);
       },
       error => {
         // Gérer les erreurs d'authentification
@@ -28,9 +37,15 @@ export class LoginPage implements OnInit {
       }
     );
   }
+  
   logout(){
     this.authService.logout()
     console.log(localStorage);
+  }
+
+  signup(){
+    this.router.navigate(['/signup']);
+
   }
 
   ngOnInit() {

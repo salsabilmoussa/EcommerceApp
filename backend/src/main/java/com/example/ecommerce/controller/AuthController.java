@@ -5,6 +5,9 @@ import com.example.ecommerce.dto.ReqRes;
 import com.example.ecommerce.model.OurUsers;
 import com.example.ecommerce.model.Produit;
 import com.example.ecommerce.service.AuthService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -53,5 +56,9 @@ public class AuthController {
     @DeleteMapping("/{userId}")
     public void deleteUser(@PathVariable String userId) {
         authService.deleteUser(userId);
+    }
+    @GetMapping("/sellers")
+    public List<OurUsers> getSellerUsers() {
+        return authService.getUsersByRoleSeller();
     }
 }

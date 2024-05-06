@@ -1,0 +1,203 @@
+.custom-searchbar {
+  background-color: #FFFFFF;
+  height: 45px;
+  width: 186px;
+  border-radius: 20px;
+  position: absolute;
+  left: 15px;
+  top: 48px;
+  margin-top: 20px;
+}
+
+.bouton-blanc {
+  position: absolute;
+  background-color: #fff;
+  /* Couleur blanche */
+  left: 250px;
+  top: 33px;
+  margin-top: 30px;
+  color: #000;
+  /* Couleur du texte, ajustez si nécessaire */
+  border-radius: 50%;
+  /* Pour rendre le bouton rond */
+  width: 100px;
+  /* Ajustez la taille selon vos besoins */
+  height: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* Ombre avec un flou de 10px */
+}
+
+
+
+.element {
+  width: 333px;
+  height: 600px;
+  border-radius: 20px;
+  margin-left: 13px;
+  /* Décalage horizontal */
+  margin-top: 80px;
+  /* Décalage vertical */
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* Ombre avec un flou de 10px */
+
+}
+
+.accept-button,
+.reject-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border: 2px solid transparent;
+  /* Pour créer le cercle */
+  border-radius: 50%;
+  /* Pour rendre le bouton rond */
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: green;
+  /* Couleur pour l'icone tick */
+}
+
+.accept-button {
+  background-color: #3E976C;
+  /* Couleur pour l'icone tick */
+  color: white;
+  /* Couleur pour l'icone tick */
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.reject-button {
+  background-color: rgb(166, 77, 77);
+  /* Couleur pour l'icone x */
+  color: white;
+  /* Couleur pour l'icone x */
+}
+
+.delete-button {
+  background-color: rgb(200, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+
+
+
+
+
+
+.action-buttons {
+  display: flex;
+  /* Pour placer les boutons côte à côte */
+  justify-content: flex-end;
+  /* Pour les aligner à droite */
+
+}
+
+.element1 {
+  width: 333px;
+  height: 650px;
+  border-radius: 20px;
+  margin-left: 13px;
+  margin-top: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* Ombre avec un flou de 10px */
+
+}
+
+.titre {
+  font-family: 'Inder', sans-serif;
+  /* Utilisation de la police Inder */
+  font-size: 20px;
+  /* Taille de la police */
+  font-weight: bold;
+  /* Gras */
+  left: 29px;
+  /* Décalage horizontal */
+  top: 145px;
+  margin-left: 20px;
+  
+}
+
+.titre1 {
+  font-family: 'Inder', sans-serif;
+  /* Utilisation de la police Inder */
+  font-size: 20px;
+  /* Taille de la police */
+  font-weight: bold;
+  /* Gras */
+  position: absolute;
+  left: 29px;
+  /* Décalage horizontal */
+  top: 25px;
+  /* Décalage vertical */
+
+}
+
+.seller-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-row {
+  display: flex;
+  align-items: center;
+  margin-top: 55px;
+  margin-bottom: 5px;
+}
+
+.seller-image {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+  /* Espacement entre l'image et les détails de l'article */
+  margin-left: 10px;
+}
+
+.seller-title {
+  font-weight: bold;
+}
+
+.seller-details {
+  flex-grow: 1;
+  /* Permet aux détails de l'article de prendre autant d'espace que possible */
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* Aligner les boutons à droite */
+  position: absolute;
+  bottom: 83px;
+  /* Ajustez la distance par rapport au bas */
+  right: 40px;
+}
+
+
+
+.pagination-buttons button {
+  margin-left: 5px;
+  /* Espacement entre les boutons */
+}
+
+.seller-image1 {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+  /* Espacement entre l'image et les détails de l'article */
+  margin-left: 10px;
+  border-radius: 50%;
+  /* Rendre l'image circulaire */
+  overflow: hidden;
+  /* Pour cacher les coins arrondis en dehors de l'image */
+}

@@ -14,6 +14,7 @@ export interface ReqRes {
 
 interface ourUsers{
   id: string
+  role: string
 }
 
 
