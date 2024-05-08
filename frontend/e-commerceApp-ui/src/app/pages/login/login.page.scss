@@ -1,0 +1,78 @@
+.custom-card {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    position: absolute;
+    left: calc(50% - 150px);
+    top: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+  }
+  
+  .title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  
+  .login-link {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .login-link span {
+    color: #69b08d;
+    font-weight: bold;
+  }
+  
+  .custom-button {
+    background-color: #3E976C !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    display: block !important;
+    margin: 20px auto 0;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  
+  form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group i {
+    margin-left: 30px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 50px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  
