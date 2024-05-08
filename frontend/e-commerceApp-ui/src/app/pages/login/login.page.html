@@ -1,0 +1,20 @@
+
+<ion-content [fullscreen]="true">
+  <div class="custom-card">
+    <h1 class="title">LOGIN</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password">
+      </div>
+      <button type="submit" class="custom-button">Sign In</button>
+      <div class="login-link">Don't have an account yet? <span (click)="signup()">Sign Up</span></div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<ion-content [fullscreen]="true">
+  <div class="custom-card">
+    <h1 class="title">SIGN UP</h1>
+    <form >
+
+      <div class="form-group">
+          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <input type="text" [(ngModel)]="newUser.name" id="name" name="name" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <input type="email" [(ngModel)]="newUser.email" id="email" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <input type="password" [(ngModel)]="newUser.password" id="password" name="password" placeholder="Password" [(ngModel)]="password">
+      </div>
+      <div class="form-group">
+        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" [(ngModel)]="confirmPassword">
+        <div *ngIf="passwordMismatch" class="error-message">Passwords do not match!</div>
+      </div>
+      <div class="form-group">
+        <i class="fas fa-camera fa-lg me-3 fa-fw"></i>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" id="image" name="image">
+      </div>
+      <div class="radio-container">
+        <div>
+          <input type="radio" name="inlineRadioOptions"  [(ngModel)]="newUser.role" id="customer" value="customer" />
+          <label for="customer">Customer</label>
+        </div>
+        <div>
+          <input type="radio" name="inlineRadioOptions" [(ngModel)]="newUser.role" id="seller" value="seller" />
+          <label for="seller">Seller</label>
+        </div>
+      </div>
+      
+      <button type="submit" class="custom-button" (click)="onSubmit()" [disabled]="passwordMismatch">Sign Up</button>
+      <div class="login-link">Already have an account? <span (click)="login()">Login</span></div>
+
+    </form>
+  </div>
+
+</ion-content>

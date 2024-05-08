@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../service/auth.service';
+
 
 
 interface Product {
-  img: string;
-  title: string;
-  price: string;
+  description : ''
+  id : ''
+  imageUrl : ''
+  ownerId : ''
+  price : ''
+  quantity : ''
+  title : ''
 }
 
 @Component({
@@ -13,14 +19,12 @@ interface Product {
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+ 
+  userId: string | null = null;
+  user: any;
+  testList : boolean = true;
 
-  
-
-  products : Product[] =[
-    {img : "../../../assets/images/gris.png",title : "Lorem Ipsum Dolor Sit Amet", price : "$ 122.00"},
-    {img : "../../../assets/images/black.png",title : "Lorem Ipsum Dolor Sit Amet", price : "$ 330.00"},
-    {img : "../../../assets/images/beig.png",title : "Lorem Ipsum Dolor Sit Amet", price : "$ 122.00"}
-  ];
+  products : Product[] =[];
 
   isSelected = {
     profile: true,
@@ -32,9 +36,32 @@ export class ProfilePage implements OnInit {
     this.isSelected = { ...this.isSelected, [autre]: false };
   }
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.userId = localStorage.getItem('userId');
+    if(this.userId != null){
+      this.authService.getUser(this.userId).subscribe(
+        res =>{
+          this.user = res;
+          this.products = this.user.products;
+          if(this.products.length == 0){
+            this.testList = false
+          }
+        }, err =>{
+          console.log(err);
+        }
+      );
+    }
+  }
+  deleteProd(prod : any){
+    this.products = this.products.filter(product => product.id !== prod.id);
+    this.authService.deleteProductFromList(this.userId,prod).subscribe(
+      res =>{
+      }, err => {
+        console.log(err);
+      }
+    );
   }
 
 }

@@ -1,0 +1,28 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title style="margin-left: -20px;">
+    <span style="color: #3E976C;">Chic</span>
+    <span>Chair</span>
+  </ion-title>
+  <ion-buttons slot="primary" style="margin-right: 50px;">
+    <div class="circle-container-nav">
+      <p style="color: white;">0</p>
+    </div>
+    <div routerLink = "/basket">
+      <ion-img src="../../../assets/icon/icons8-shopping-cart-24.png" class="toolbar-icon"></ion-img>
+    </div>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">basket</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

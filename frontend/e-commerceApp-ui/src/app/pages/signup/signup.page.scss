@@ -1,0 +1,104 @@
+.custom-card {
+  width: 300px;
+  height: 600px;
+  background-color: white;
+  position: absolute;
+  left: 25px;
+  top: 61px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  /* Ajoute une ombre */
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 2em;
+  /* Taille de police */
+  text-align: center;
+  /* Alignement du texte */
+  margin-bottom: 40px;
+  margin-top: 20px;
+
+}
+
+.login-link {
+  cursor: pointer;
+  text-align: center;
+
+}
+
+.login-link span {
+  color: #69b08d;
+  font-weight: bold;
+}
+
+.custom-button {
+  background-color: #3E976C !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  display: block !important;
+  margin: 20px auto 0; /* Ajoute une marge de 20px en haut, 0 à droite/gauche et 0 en bas */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  text-align: center;
+
+}
+
+
+
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  /* Centre les éléments horizontalement */
+  align-items: center;
+  /* Centre les éléments verticalement */
+}
+
+.radio-container>div {
+  margin-right: 10px;
+}
+
+
+
+/* Reset des styles pour le formulaire */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style des groupes de formulaire */
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group i {
+margin-left: 10px;}
+
+
+/* Style des champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+/* Style des boutons */
+button[type="submit"] {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
