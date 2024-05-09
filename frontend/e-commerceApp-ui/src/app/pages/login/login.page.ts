@@ -22,9 +22,8 @@ export class LoginPage implements OnInit {
           localStorage.setItem('refreshToken', response.refreshToken);
           if (response.ourUsers.role === 'admin') {
             this.router.navigate(['/admin']);
-          } else {
-            // Gérer le cas où l'utilisateur n'est pas un admin mais a un compte
-            console.log('User is not an admin but has an account.');
+          } else if(response.ourUsers.role === 'customer') {
+            this.router.navigate(['/']);
           }
         } else {
           // Gérer le cas où l'utilisateur n'a pas encore de compte
